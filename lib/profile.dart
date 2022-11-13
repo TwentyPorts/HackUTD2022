@@ -48,7 +48,7 @@ class ProfileScreen extends StatelessWidget {
                 children: <Widget> [
 
                   const Padding(
-                    padding: EdgeInsets.only(right:40, top: 10, left: 4),
+                    padding: EdgeInsets.only(right:10, top: 10, left: 4),
                     child: Text(
                       "JAKE STONE",
                       style: TextStyle(
