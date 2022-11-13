@@ -20,6 +20,7 @@ class _CameraScreenState extends State<CameraScreen> {
   String searchQuery;
   File imageFile;
   final ImagePicker _picker = ImagePicker();
+  final HomeScreen home = new HomeScreen();
   // upload from gallery method
   _openGallery(BuildContext context) async {
     var Xpicture = await _picker.pickImage(source: ImageSource.gallery);
@@ -108,27 +109,15 @@ class _CameraScreenState extends State<CameraScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
         toolbarHeight: 70,
-        backgroundColor: Color(0xFF474E67),
         elevation: 2.0,
-        title: RichText(
-          text: TextSpan(
+        backgroundColor: Colors.indigo,
+        title: const Text('Community Connect',
             style: TextStyle(
-              // global text style
-              fontSize: 20,
-            ),
-            children: <TextSpan>[
-              TextSpan(
-                  text: 'Image',
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold)),
-              TextSpan(
-                  text: 'Select',
-                  style: TextStyle(
-                      color: Color(0xFFCC66C2), fontWeight: FontWeight.bold)),
-            ],
-          ),
+              //fontFamily: 'Open Sans',
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+            )
         ),
         actions: [
           IconButton(
@@ -137,19 +126,18 @@ class _CameraScreenState extends State<CameraScreen> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => HomeScreen()))
+                        builder: (context) => HomeScreen(gardenFlag: true)))
               })
         ],
       ),
       body: Container(
-        color: Color(0xFF373D54),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               _deicdeImageView(),
               ElevatedButton(
-                  style: ElevatedButton.styleFrom(primary: Color(0xFFCC66C2)),
+                  style: ElevatedButton.styleFrom(primary: Colors.amber[900]),
                   onPressed: () {
                     _showChoiceDialog(context);
                   },

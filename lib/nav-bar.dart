@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smol_biz/business-screen.dart';
 import 'package:smol_biz/home-screen.dart';
 import 'package:smol_biz/camera.dart';
 import 'package:smol_biz/profile.dart';
@@ -11,7 +12,7 @@ class NavBar extends StatefulWidget {
 class _NavBarState extends State<NavBar> {
   // const MyApp({super.key});
 
-  int _selectedIndex = 0; //New
+  int _selectedIndex = 1; //New
 
   static List<Widget> _widgetOptions = [CameraScreen(), HomeScreen(), ProfileScreen()];
 
